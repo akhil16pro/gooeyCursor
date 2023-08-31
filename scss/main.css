@@ -1,0 +1,75 @@
+:root {
+  --columns: 30;
+  --size: calc(100vw / var(--columns)); }
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000; }
+
+main {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative; }
+
+.gooeyTemplate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; }
+
+.cursor {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99;
+  mix-blend-mode: exclusion;
+  overflow: hidden;
+  pointer-events: none; }
+  .cursor .cursorInner {
+    display: grid;
+    grid-template-columns: repeat(var(--columns), var(--size)); }
+
+.cursorInnerBox {
+  width: var(--size);
+  height: var(--size);
+  background: red;
+  opacity: 0; }
+
+.hideSvg {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  position: absolute; }
+
+.contentBox {
+  display: grid;
+  grid-template-columns: repeat(var(--columns), var(--size));
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5; }
+  .contentBox .letterBox {
+    border: 1px solid #080808;
+    border-radius: 0.5rem;
+    aspect-ratio: 2/2;
+    color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9vw; }
+  .contentBox h1 {
+    color: #fff;
+    font-size: 15vw;
+    letter-spacing: 1vw;
+    font-weight: 400;
+    margin: 0;
+    opacity: 0.5; }
+
+/*# sourceMappingURL=main.css.map */
